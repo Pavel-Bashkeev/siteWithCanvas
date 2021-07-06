@@ -1,0 +1,31 @@
+.hero {
+	margin-bottom: 150px;
+
+	&__title {
+		font: $font-big;
+	}
+
+	&__subtitle {
+		font: $font-middle;
+	}
+}
+
+.hero-btns {
+	&__box {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__item {
+		background-color: $primery;
+		border-radius: 64px;
+		padding: 2px 16px;
+		color: $white;
+		font: $font-text-middle;
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+}

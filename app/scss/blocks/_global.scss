@@ -17,10 +17,18 @@ body {
 	background-color: $bgMain;
 	font: $font-default;
 	color: $white;
+
+}
+
+.wrapper {
+	height: auto;
+	max-width: 1330px;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .container {
-	max-width: 1330px;
+	width: 100%;
 }
 
 .btn-reset {
@@ -28,4 +36,25 @@ body {
 	outline: none;
 	background-color: transparent;
 	cursor: pointer;
+}
+
+.decor-lines {
+	padding: 0 15px;
+	z-index: -1;
+
+	&__line {
+		height: 100%;
+		width: 1px;
+		background-color: #383838;
+	}
+}
+
+.subtitle-section {
+	margin-bottom: 15px;
+	font: $font-section-subtitle;
+}
+
+.title-section {
+	font: $font-section-title;
+	margin-bottom: 45px;
 }
