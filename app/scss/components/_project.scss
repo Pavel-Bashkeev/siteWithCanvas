@@ -37,7 +37,7 @@
 
 		position: absolute;
 		top: -17px;
-		left: 1px;
+		left: 3px;
 		z-index: -1;
 	}
 }
@@ -53,21 +53,37 @@
 		color: $white;
 		padding: 0;
 		margin-bottom: 10px;
+
+		&:hover {
+			color: $primery;
+		}
+	}
+
+	&__text {
+		transition: all .3s ease-in-out;
+		max-height: 0;
+		opacity: 0;
+		will-change: max-height;
 	}
 
 	&__arrow {
+		transition: all .3s ease-in-out;
 		width: 27px;
 		height: 26px;
 		transform: rotate(90deg);
 	}
 }
 
-.project-tabs__item--active {
+.project-blocks__item--open {
 	.project-blocks__btn {
 		color: $primery;
 	}
 
 	.project-blocks__arrow {
 		transform: rotate(0deg);
+	}
+
+	.project-blocks__text {
+		opacity: 1;
 	}
 }
