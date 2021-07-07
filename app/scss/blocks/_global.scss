@@ -36,6 +36,8 @@ body {
 	outline: none;
 	background-color: transparent;
 	cursor: pointer;
+	color: inherit;
+	font: inherit;
 }
 
 .decor-lines {
@@ -52,9 +54,17 @@ body {
 .subtitle-section {
 	margin-bottom: 15px;
 	font: $font-section-subtitle;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 
 .title-section {
 	font: $font-section-title;
 	margin-bottom: 45px;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
