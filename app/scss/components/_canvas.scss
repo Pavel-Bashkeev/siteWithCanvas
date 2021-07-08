@@ -1,7 +1,22 @@
 .canvas {
-	grid-column: 8 / span 12;
 	width: 532px;
 	height: 532px;
 	border-radius: 50%;
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+}
+
+#convasOne {
+	position: relative;
+	z-index: 10;
+
+}
+
+.shadowCanvas {
+	grid-column: 8 / span 12;
+	width: fit-content;
+	border-radius: 50%;
+	filter: drop-shadow(0px 0px 40px rgba(255, 255, 255, 0.1));
 }

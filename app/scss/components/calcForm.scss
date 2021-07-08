@@ -1,0 +1,93 @@
+.calc {
+	background-image: url('../images/dest/decorForm.webp');
+	background-color: $bgMain;
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	background-size: contain;
+	min-height: 688px;
+
+	&__container {
+		max-width: 1330px;
+		padding: 0 15px;
+	}
+
+	&__inner {
+		width: 50%;
+		margin-left: auto;
+		padding: 70px 0 55px;
+	}
+
+	&__title {
+		font: 700 32px / 55px $montserrat;
+		padding-right: 30px;
+	}
+
+	&__subtitle {
+		font: $font-default;
+	}
+}
+
+.calc-form {
+
+	&__input,
+	&__message {
+		display: block;
+		width: 100%;
+		color: $white;
+		font: $font-default;
+		border-bottom: 1px solid $white;
+
+		&::placeholder {
+			color: $white;
+			font: $font-default;
+		}
+	}
+
+	&__input {
+		height: 42px;
+		margin-bottom: 20px;
+	}
+
+	&__message {
+		height: 102px;
+	}
+
+	&__btn {
+		margin-left: auto;
+		margin-right: 83px;
+		display: block;
+		position: relative;
+		z-index: 1;
+		margin-top: 67px;
+
+		&::before {
+			content: '';
+			width: 67px;
+			height: 67px;
+			border-radius: 50%;
+			background-color: $primery;
+			position: absolute;
+			top: -20px;
+			left: -23px;
+			z-index: -1;
+		}
+
+		&::after {
+			transition: width .3s ease-in-out;
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 2px;
+			background-color: $white;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}
