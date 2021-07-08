@@ -1,6 +1,7 @@
 .canvas {
-	grid-column: 6 / span 12;
+	grid-column: 8 / span 12;
 	width: 532px;
 	height: 532px;
-
+	border-radius: 50%;
+	overflow: hidden;
 }
