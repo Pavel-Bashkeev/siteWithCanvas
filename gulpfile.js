@@ -16,21 +16,8 @@ const imagemin = require('gulp-imagemin');
 const webpConv = require('gulp-webp');
 const newer = require('gulp-newer');
 const del = require('del');
-const fileInclude = require('gulp-file-include');
 const sprite = require('gulp-svg-sprite');
 
-function htmlInclude() {
-       return src([
-              './app/components/app.html'
-       ])
-              .pipe(fileInclude({
-                     prefix: '@',
-                     basepath: '@file'
-              }))
-              .pipe(concat('index.html'))
-              .pipe(dest('./app'))
-              .pipe(browserSync.stream())
-}
 
 function styles() {
        return src([
@@ -120,7 +107,6 @@ function buildcopy() {
 }
 function startwatch() {
 
-       watch('./app/components/**/*.html', htmlInclude);
        watch('app/**/' + preprocessor + '/**/*', styles);
        watch(['app/**/*js', '!app/**/*.min.js'], scripts);
        watch('app/**/*.html').on('change', browserSync.reload);
@@ -128,7 +114,6 @@ function startwatch() {
        watch('./app/images/dest/icons/**/*', imagesSvgSprite);
 }
 
-exports.fileInclude = htmlInclude;
 exports.styles = styles;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
@@ -140,4 +125,4 @@ exports.cleandist = cleandist;
 
 exports.build = series(cleandist, styles, scripts, images, buildcopy);
 
-exports.default = parallel(htmlInclude, styles, scripts, browsersync, startwatch);
+exports.default = parallel(styles, scripts, browsersync, startwatch);
